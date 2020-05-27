@@ -17,7 +17,7 @@ docker-build: .build/bridge .build/nginx
 		--build-arg build_env=stage \
 		-t bridge-nginx:stage .
 
-run-local: docker-build
+run-local:
 	$(COMPOSE_BASE) -f docker-compose_local.yml up -d bridge
 
 run-stage: docker-build

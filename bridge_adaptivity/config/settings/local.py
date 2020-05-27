@@ -8,7 +8,7 @@ SECRET_KEY = secure.SECRET_KEY
 DATABASES = secure.DATABASES
 
 # Configure Bridge host with is used for lis_outcome_service_url composition
-BRIDGE_HOST = secure.BRIDGE_HOST
+BRIDGE_HOST = 'edx.devstack.lms'
 
 try:
     # Engine for Adaptivity configuration block

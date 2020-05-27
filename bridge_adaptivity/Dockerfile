@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     netcat \
     && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 8000
+EXPOSE 8009
 
 WORKDIR /bridge_adaptivity
 
@@ -35,7 +35,7 @@ RUN pip install -r requirements_local.txt
 FROM prod_base as prod
 
 ENTRYPOINT ["gunicorn"]
-CMD ["config.wsgi:application", "-w", "2", "-b", ":8000"]
+CMD ["config.wsgi:application", "-w", "2", "-b", ":8009"]
 COPY . .
 RUN python manage.py collectstatic -v 3 -c --noinput
 
@@ -49,7 +49,7 @@ COPY --from=prod /bridge_adaptivity /bridge_adaptivity
 
 FROM stage_base as stage
 ENTRYPOINT ["gunicorn"]
-CMD ["config.wsgi:application", "-w", "2", "-b", ":8000"]
+CMD ["config.wsgi:application", "-w", "2", "-b", ":8009"]
 COPY --from=prod /bridge_adaptivity /bridge_adaptivity
 COPY --from=prod /www/static /www/static
 

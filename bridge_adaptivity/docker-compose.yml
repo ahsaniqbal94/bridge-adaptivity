@@ -24,12 +24,19 @@ services:
     volumes:
       - .:/bridge_adaptivity
     ports:
-      - "8000:8000"
+      - "8009:8009"
     healthcheck:
-      test: ['CMD-SHELL', 'nc -z 0.0.0.0 8000']
+      test: ['CMD-SHELL', 'nc -z 0.0.0.0 8009']
       interval: 5s
       timeout: 10s
       retries: 5
+
+    networks:
+      devstack_default:
+        aliases:
+          - bridge
+          - bridge.lms
+      default:
 
   # Celery worker
   worker:
@@ -44,6 +51,11 @@ services:
     depends_on:
       - postgres
       - rabbit
+    networks:
+      devstack_default:
+        aliases:
+          - bridge.worker
+      default:
 
   bridge_web_socket:
     image: bridge_adaptivity
@@ -89,3 +101,8 @@ services:
 
 volumes:
   pgs:
+
+networks:
+  devstack_default:
+    external: true
+  default:
