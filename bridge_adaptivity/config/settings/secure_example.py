@@ -21,8 +21,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bridge_db',
-        'USER': 'bridge',
-        'PASSWORD': 'bridge-adaptivity',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'postgres',
         'PORT': 5432,
     }
