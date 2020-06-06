@@ -190,9 +190,6 @@ a.edit-object:hover {
   border-radius: 0px;
 }
 
-.navbar .nav li, .navbar .nav li a, .navbar .brand:hover {
-  color: white;
-}
 
 .nav-list > .active > a, .nav-list > .active > a:hover {
   background: #0075b4;
