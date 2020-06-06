@@ -164,3 +164,45 @@ a.edit-object:hover {
     display: flex;
     justify-content: center;
 }
+
+
+.navbar-inverse .brand a {
+  color: #999999;
+}
+.navbar-inverse .brand:hover a {
+  color: white;
+  text-decoration: none;
+}
+
+/* custom navigation styles */
+.navbar {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.navbar {
+  background: #0075b4;
+  color: white;
+  border: none;
+  border-top: 5px solid #A30000;
+  border-radius: 0px;
+}
+
+.navbar .nav li, .navbar .nav li a, .navbar .brand:hover {
+  color: white;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover {
+  background: #0075b4;
+}
+
+.navbar .dropdown-menu li a, .navbar .dropdown-menu li {
+  color: #A30000;
+}
+
+.navbar .dropdown-menu li a:hover {
+  background: #EEEEEE;
+  color: #C20000;
+}
