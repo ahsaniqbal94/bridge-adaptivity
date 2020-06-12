@@ -8,7 +8,7 @@ Should be ignored by VCS (Git).
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = 'xf!mz_(en(p=tcp$-4%lse$9f55e+q)10rcve@bxhzcnrtv)hj-key'
 STATIC_ROOT = 'static/'
-ALLOWED_HOSTS = ['localhost', 'bridge', 'bridge.lms', '*.schooltutor.net', 'schooltutor.net']  # add bridge host in production
+ALLOWED_HOSTS = ['localhost', 'bridge', 'bridge.lms', '.schooltutor.net']  # add bridge host in production
 BRIDGE_HOST = 'bridge.lms:8009'
 BRIDGE_HOST = BRIDGE_HOST.strip()
 
