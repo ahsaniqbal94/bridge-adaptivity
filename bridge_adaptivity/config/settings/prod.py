@@ -10,6 +10,8 @@ ALLOWED_HOSTS = secure.ALLOWED_HOSTS
 STATIC_ROOT = '/www/static/'
 DATABASES = secure.DATABASES
 
+
+LTI_SSL = False
 # Configure Bridge host with is used for lis_outcome_service_url composition
 BRIDGE_HOST = secure.BRIDGE_HOST
 
