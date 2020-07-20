@@ -53,6 +53,7 @@ def create_lti_launch_params(request, sequence_item_id, consumer_prams):
         source_name = activity.source_name
         source_lti_url = activity.source_launch_url
         lis_outcome_service_url = urllib.parse.urljoin(settings.BRIDGE_HOST, reverse('module:sequence-item-grade'))
+        log.info("Url generated to send back grade {}".format(lis_outcome_service_url))
         consumer_prams['params'].update({
             'user_id': sequence_item.user_id_for_consumer,
             'context_id': sequence_item.sequence.collection_order.collection.name,
