@@ -9,7 +9,7 @@ Should be ignored by VCS (Git).
 SECRET_KEY = 'xf!mz_(en(p=tcp$-4%lse$9f55e+q)10rcve@bxhzcnrtv)hj-key'
 STATIC_ROOT = 'static/'
 ALLOWED_HOSTS = ['localhost', 'bridge', 'bridge.lms', '.schooltutor.net']  # add bridge host in production
-BRIDGE_HOST = 'bridge.lms:8009'
+BRIDGE_HOST = 'assessments.schooltutor.net'
 BRIDGE_HOST = BRIDGE_HOST.strip()
 
 # SENTRY contains sentry dsn string. If dsn is not empty, then all exceptions from the application will be

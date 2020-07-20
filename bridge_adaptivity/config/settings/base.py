@@ -18,6 +18,8 @@ try:
 except ImportError:
     from . import secure_example as secure
 
+BRIDGE_HOST = secure.BRIDGE_HOST
+
 # Sentry monitoring initialization
 if secure.SENTRY_DSN:
     import sentry_sdk
