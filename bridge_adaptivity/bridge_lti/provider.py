@@ -135,7 +135,7 @@ def learner_flow(request, lti_lms_platform, tool_provider, collection_order_slug
     lti_user, created = LtiUser.objects.update_or_create(
         user_id=request.POST['user_id'],
         lti_lms_platform=lti_lms_platform,
-        defaults={'course_id': request.POST['context_id'], 'email': request.POST['lis_person_contact_email_primary']}
+        defaults={'course_id': request.POST['context_id'], 'email': request.POST.get('lis_person_contact_email_primary', '')}
     )
     log.debug("LTI user {}: user_id='{}'".format('created' if created else 'picked', lti_user.user_id))
 
