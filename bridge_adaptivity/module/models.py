@@ -193,7 +193,7 @@ class SequenceItem(models.Model):
 
     @property
     def user_id_for_consumer(self):
-        return f'{self.sequence.lti_user.user_id}{self.sequence.suffix}{self.suffix}'
+        return f'{self.sequence.lti_user.user_id}{self.sequence.lti_user.course_id}{self.sequence.suffix}{self.suffix}'
 
 
 class GradingPolicy(ModelFieldIsDefaultMixin, models.Model):
