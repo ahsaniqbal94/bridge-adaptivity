@@ -142,7 +142,7 @@ def learner_flow(request, lti_lms_platform, tool_provider, collection_order_slug
     sequence, created = Sequence.objects.get_or_create(
         lti_user=lti_user,
         collection_order=collection_order,
-        suffix=hashlib.md5(f"{request.POST['context_id']}{unique_marker}").digest(),
+        suffix=hashlib.md5(f"{request.POST['context_id']}{unique_marker}".encode('utf-8')).digest(),
     )
 
     # Update sequence metadata with lti parameters required by the engine
